@@ -1,6 +1,14 @@
 <%- include('partials/head'); -%>
 <h2>test</h2>
-<%- include('partials/footer'); -%><%- include('partials/head'); %> 
-<%- include('partials/header'); %> 
 
-<h1>HIIIIIIII</h1>
+<section>
+    <% projects.forEach(project => { %>
+        <article>
+            <h2><%= project.node.name %></h2>
+            <p><%= project.node.description %></p>
+            <p><%= project.node.pushedAt %></p>
+           <p> <%= project.node.isPrivate %></p> 
+        </article>
+   <% }) %>
+</section>
+<%- include('partials/footer'); -%>
