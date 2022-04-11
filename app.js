@@ -1,29 +1,39 @@
 require("dotenv").config();
 const express = require("express");
+const indexRoute = require("./routes/index")
 // const fetch = require("node-fetch");
 
-// Create express app
-const app = express();
+module.exports = express()
+    .set("view engine", "ejs")
+    .set("views", "./views")
 
-// Link templating engine ejs to express
-app.set("view engine", "ejs");
+    .use(express.static("./static"))
 
-// Template files
-app.set("views", "views");
+    .use("/", indexRoute)
+    
 
-// Use static folder
-//test
-app.use(express.static("static"));
+// // Create express app
+// const app = express();
 
-app.get("/", (req, res) => {
-  res.render("index", {
-    pageTitle: "Ayeee new project minor!",
-  });
-});
+// // Link templating engine ejs to express
+// app.set("view engine", "ejs");
 
-// setup server
-app.set("port", process.env.PORT || 8000);
+// // Template files
+// app.set("views", "views");
 
-const server = app.listen(app.get("port"), function () {
-  console.log(`Server app started on port : ${app.get("port")}`);
-});
+// // Use static folder
+// //test
+// app.use(express.static("static"));
+
+// app.get("/", (req, res) => {
+//   res.render("index", {
+//     pageTitle: "Ayeee new project minor!",
+//   });
+// });
+
+// // setup server
+// app.set("port", process.env.PORT || 8000);
+
+// const server = app.listen(app.get("port"), function () {
+//   console.log(`Server app started on port : ${app.get("port")}`);
+// });
