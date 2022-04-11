@@ -12,6 +12,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 // Use static folder
+//test
 app.use(express.static("static"));
 
 app.get("/", (req, res) => {
