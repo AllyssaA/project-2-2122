@@ -11,26 +11,24 @@ module.exports = express
 
   .get("/", (req, res) => {
     graphqlAuth(`{
-            user(login: "AllyssaA) {
-                repositories(affiliations: OWNER, first: 100) {
-                  edges {
-                    node {
-                        id
-                        description
-                        name
-                        pushedAt
-                        nameWithOwner
-                        isPrivate
-                    }
-                  }
-                }
-              }`)
-              
-              .then((data) => {
-                console.log(data.user.repositories.edges)
+      user(login: "AllyssaA") {
+        repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}) {
+          edges {
+            node {
+              name
+              description
+              pushedAt
+              url
+              homepageUrl
+            }
+          }
+        }
+      }
+    }`).then((data) => {
+      // console.log(data.login.repositories.edges)
       res.render("index", {
-        index: data.user.repositories.edges,
+        projects: data.user.repositories.edges,
+        pageTitle: "Github Portfolio",
       });
     });
-
   });

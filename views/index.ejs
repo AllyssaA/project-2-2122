@@ -1,14 +1,21 @@
 <%- include('partials/head'); -%>
-<h2>test</h2>
+
+    <section>
+        <h2>Hi there 👋,</h2>
+        <p>These are some projects I worked on at GitHub. Most of them are projects created while studying Communication & Multimedia Design.</p>
+    </section>
 
 <section>
-    <% projects.forEach(project => { %>
-        <article>
-            <h2><%= project.node.name %></h2>
-            <p><%= project.node.description %></p>
-            <p><%= project.node.pushedAt %></p>
-           <p> <%= project.node.isPrivate %></p> 
-        </article>
-   <% }) %>
+<% projects.forEach(project => { %>
+    <article>
+        <h2><%= project.node.name %></h2>
+        <p><%= project.node.description %></p>
+        <p><%= project.node.pushedAt %></p>   
+        <% if (project.node.homepageUrl !== null) { %>
+        <a href="<%= project.node.homepageUrl %>"><span>Live project</span></a>
+        <% } %>
+        <a href="<%= project.node.url %>"><span>Browse Github</span></a>        
+    </article>
+<% }) %>
 </section>
 <%- include('partials/footer'); -%>
