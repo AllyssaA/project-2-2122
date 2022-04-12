@@ -26,6 +26,7 @@ An automagically generated portfolio page based on your github repository, with 
 - [ ] Render images from API
 - [ ] Generate readme from API
 - [ ] Setup Demo (Heroku)
+- [ ] Remove unused files
 
 
 
