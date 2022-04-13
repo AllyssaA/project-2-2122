@@ -1,0 +1,82 @@
+/* CSS Document */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+    --color-body: #ccc5b9;
+    --color-white: #ffffff;
+    --color-title: #0d3b66;
+    --color-card: #ffffff;
+    --color-p: #495057;
+}
+
+@font-face {
+    font-family: 'Roboto',
+        sans-serif;
+    src: url(https://fonts.google.com/specimen/Roboto);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto';
+}
+
+h2,
+a {
+    line-height: 2em;
+}
+
+h2 {
+    text-align: center;
+    color: var(--color-title);
+}
+
+p {
+    color: var(--color-p);
+}
+
+section:first-of-type {
+    text-align: center;
+    margin: 2em;
+}
+
+section:nth-of-type(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article {
+    min-width: 350px;
+    max-width: 250px;
+    flex: 1 1 250px;
+    padding: 0 0.5rem 0 0.5em;
+    margin: 1rem;
+    border: 0.5em solid var(--color-white);
+    background-color: var(--color-card);
+    transition: all 0.5s ease;
+    border-radius: 0.5em;
+
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+article:hover {
+    border: 1em solid #0d3b66;
+    border-image-slice: 1;
+    border-width: 1em;
+    background-color: var(--color-white);
+    border-radius: 0.5em;
+}
+
+footer {
+    text-align: center;
+}
