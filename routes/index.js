@@ -20,6 +20,8 @@ module.exports = express
               pushedAt
               url
               homepageUrl
+              openGraphImageUrl
+          
             }
           }
         }
