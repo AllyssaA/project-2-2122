@@ -1,0 +1,23 @@
+<%- include('partials/head'); -%>
+<%- include('partials/header'); -%>
+
+
+<section>
+<% tests.forEach(test => { %>
+    <article>
+        <h2><%= test.node.name %></h2>
+        <img src="<%= project.node.openGraphImageUrl %>" alt="">   
+        <% if (test.node.description != null) { %>
+            <p><%= project.node.description %></p>
+        <% }else{ %>
+            <p>Description not available</p>
+        <% } %> 
+        <p>Last updated: <%= test.node.pushedAt %></p>   
+        <% if (test.node.homepageUrl !== null) { %>
+        <a href="<%= project.node.homepageUrl %>"><span>Live project</span></a>
+        <% } %>
+        <a href="<%= project.node.url %>"><span>Browse Github</span></a>        
+    </article>
+<% }) %>
+</section>
+<%- include('partials/footer'); -%>
