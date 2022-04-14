@@ -1,4 +1,3 @@
-
 /* CSS Document */
 *,
 *::after,
@@ -17,6 +16,7 @@
     --color-title: #0d3b66;
     --color-card: #ffffff;
     --color-p: #495057;
+    --color-a: #43c38d;
 }
 
 @font-face {
@@ -29,6 +29,21 @@
 
 body {
     font-family: 'Roboto';
+    background-color: #556;
+    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+        linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+        linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+        linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
+        linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
+        linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
+    background-size: 80px 140px;
+    background-position: 0 0,
+        0 0,
+        40px 70px,
+        40px 70px,
+        0 0,
+        40px 70px;
+
 }
 
 h2,
@@ -41,16 +56,37 @@ h2 {
     color: var(--color-title);
 }
 
+a {
+    color: var(--color-a);
+}
+
 p {
     color: var(--color-p);
 }
 
-section:first-of-type {
-    text-align: center;
-    margin: 2em;
+img {
+    display: block;
+    max-width: 100%;
 }
 
-section:nth-of-type(2) {
+header>section {
+    display: block;
+    text-align: center;
+    padding: 2.5em 5em;
+    background-color: var(--color-white);
+}
+
+header>section>h2:first-of-type::after {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid var(--color-title);
+    border-top: 1px solid var(--color-title);
+    height: 5px;
+    background-color: #f8f8f8;
+}
+
+section {
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -60,7 +96,7 @@ article {
     min-width: 350px;
     max-width: 250px;
     flex: 1 1 250px;
-    padding: 0 0.5rem 0 0.5em;
+    padding: 0 0.5rem;
     margin: 1rem;
     border: 0.5em solid var(--color-white);
     background-color: var(--color-card);
@@ -82,3 +118,7 @@ footer {
     text-align: center;
 }
 
+/*
+source: background
+https: //codepen.io/emzarts/pen/RRBjER 
+*/
