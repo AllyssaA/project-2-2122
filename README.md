@@ -99,6 +99,7 @@ How we used GraphQL:
 - [x] Setup Demo (Heroku)
 - [ ] Remove unused files
 - [ ] Search function
+- [ ] Create page to pick a portfolio
 
 
 
