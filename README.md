@@ -97,7 +97,7 @@ How we used GraphQL:
 - [x] Render repositories from API
 - [x] Render images from API
 - [x] Setup Demo (Heroku)
-- [ ] Remove unused files
+- [x] Remove unused files
 - [ ] Search function
 - [ ] Create page to pick a portfolio
 
