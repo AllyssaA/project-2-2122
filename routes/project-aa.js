@@ -28,7 +28,7 @@ module.exports = express
       }
     }`).then((data) => {
       // console.log(data.login.repositories.edges)
-      res.render("project-th", {
+      res.render("project-aa", {
         tests: data.user.repositories.edges,
         pageTitle: "Github Portfolio",
       });
