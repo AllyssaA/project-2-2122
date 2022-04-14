@@ -46,6 +46,16 @@ body {
 
 }
 
+section#home {
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    border: 0.5em solid var(--color-body);
+    border-radius: 3em;
+    margin-top: 20%;
+}
+
 h2,
 a {
     line-height: 2em;
@@ -116,6 +126,11 @@ article:hover {
 
 footer {
     text-align: center;
+    margin-top: 20%;
+}
+
+footer>p {
+    color: var(--color-white);
 }
 
 /*
