@@ -8,9 +8,10 @@ const graphqlAuth = graphql.defaults({
 
 module.exports = express
   .Router()
-  .get("/", (req, res) => {
+
+  .get("/test", (req, res) => {
     graphqlAuth(`{
-      user(login: "AllyssaA") {
+      user(login: "Hoa0") {
         repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}) {
           edges {
             node {
@@ -20,16 +21,16 @@ module.exports = express
               url
               homepageUrl
               openGraphImageUrl
+          
             }
           }
         }
       }
     }`).then((data) => {
       // console.log(data.login.repositories.edges)
-      res.render("index", {
-        projects: data.user.repositories.edges,
+      res.render("project-th", {
+        tests: data.user.repositories.edges,
         pageTitle: "Github Portfolio",
       });
     });
   });
-  
