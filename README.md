@@ -2,29 +2,99 @@
 
 Four days of creative exploration using the GitHub GraphQL API as the outset.
 
-## Table of Contents
-- [Synopsis](#synopsis)
-- [Description](#description)
-- [Communication](#communication)
-- [Goals](#goals)
-- [Grading](#grading)
-- [Programme](#programme)
+## 📝 Concept
+
+An automagically generated portfolio page based on your github repository, with data from the repositories, description as introductory text and profile image.
+
+## 🔴 Live demo
+
+[Demo](https://minor-project-2-2122.herokuapp.com/)
+
+## 👩‍🏫 Installation
+
+Clone repo
+
+```
+$ clone git clone https://github.com/AllyssaA/project-2-2122.git
+```
+
+Install dependencies
+```
+$ npm install
+```
+
+Start application
+
+```
+$ npm start
+```
+
+Nodemon
+
+```
+$ npm run dev
+```
 
 
-## Concept
+### Dependencies
+We've used a couple of dependencies to create and run this project:
 
-An automagically generated portfolio page based on your github repository, with data from the Readme as introductory text and image.
+* [ExpressJS](https://expressjs.com/)
+* [ejs](https://www.npmjs.com/package/ejs)
+* [graphql.js](https://www.npmjs.com/package/@octokit/graphql)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
+
+
+### Dev dependencies
+* [Nodemon](https://www.npmjs.com/package/nodemon)
+
+
+## Github GraphQL
+GraphQL is a data query language. The specification determines the validity of the schema on the API server. The schema determines the validity of client calls. The shape of a GraphQL call mirrors the shape of the JSON data it returns. Nested fields let you query for and receive only the data you specify in a single round trip.
+
+How we used GraphQL:
+
+```JavaScript
+    user(login: "Hoa0") {
+        repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}, isFork: false) {
+          edges {
+            node {
+              name
+              description
+              pushedAt
+              url
+              homepageUrl
+              openGraphImageUrl
+            }
+          }
+        }
+      }
+    }
+```
+
+
+
+## ⚖ License
+[GNU General Public License v3.0](https://github.com/AllyssaA/project-2-2122/blob/main/LICENSE)
+
+
+## ✍ Authors
+
+
+- [@Hoa0](https://github.com/Hoa0)
+- [@AllyssaA](https://github.com/AllyssaA)
+
+
 
 ## ✔ Backlog
 
 - [x] Setup server side
 - [x] Setup ejs
 - [x] Setup package.json
-- [ ] Add styling
+- [x] Add styling
 - [x] Setup GitHub GraphQL API
 - [x] Render repositories from API
-- [ ] Render images from API
-- [ ] Generate readme from API
+- [x] Render images from API
 - [x] Setup Demo (Heroku)
 - [ ] Remove unused files
 - [ ] Search function
