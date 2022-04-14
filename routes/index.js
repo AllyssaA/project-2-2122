@@ -8,12 +8,10 @@ const graphqlAuth = graphql.defaults({
   },
 });
 
-module.exports = express
-  .Router()
-  .get("/", (req, res) => {
-    graphqlAuth(`{
+module.exports = express.Router().get("/", (req, res) => {
+  graphqlAuth(`{
       user(login: "Hoa0") {
-        repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}) {
+        repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}, isFork: false) {
           edges {
             node {
               name
@@ -27,11 +25,10 @@ module.exports = express
         }
       }
     }`).then((data) => {
-      // console.log(data.login.repositories.edges)
-      res.render("index", {
-        projects: data.user.repositories.edges,
-        pageTitle: "Github Portfolio",
-      });
+    // console.log(data.login.repositories.edges)
+    res.render("index", {
+      projects: data.user.repositories.edges,
+      pageTitle: "Github Portfolio",
     });
   });
-
+});

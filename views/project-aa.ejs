@@ -6,17 +6,17 @@
 <% tests.forEach(test => { %>
     <article>
         <h2><%= test.node.name %></h2>
-        <img src="<%= project.node.openGraphImageUrl %>" alt="">   
+        <img src="<%= test.node.openGraphImageUrl %>" alt="">   
         <% if (test.node.description != null) { %>
-            <p><%= project.node.description %></p>
+            <p><%= test.node.description %></p>
         <% }else{ %>
             <p>Description not available</p>
         <% } %> 
         <p>Last updated: <%= test.node.pushedAt %></p>   
         <% if (test.node.homepageUrl !== null) { %>
-        <a href="<%= project.node.homepageUrl %>"><span>Live project</span></a>
+        <a href="<%= test.node.homepageUrl %>"><span>Live project</span></a>
         <% } %>
-        <a href="<%= project.node.url %>"><span>Browse Github</span></a>        
+        <a href="<%= test.node.url %>"><span>Browse Github</span></a>        
     </article>
 <% }) %>
 </section>
