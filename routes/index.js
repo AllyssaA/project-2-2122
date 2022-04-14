@@ -1,5 +1,7 @@
 const express = require("express");
-const { graphql } = require("@octokit/graphql");
+const {
+  graphql
+} = require("@octokit/graphql");
 const graphqlAuth = graphql.defaults({
   headers: {
     authorization: "token " + process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
