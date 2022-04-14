@@ -10,8 +10,8 @@ module.exports = express
   .Router()
   .get("/", (req, res) => {
     graphqlAuth(`{
-      user(login: "AllyssaA") {
-        repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      user(login: "Hoa0") {
+        repositories(affiliations: OWNER, first: 100, privacy: PUBLIC, orderBy: {field: UPDATED_AT, direction: DESC}, isFork: false) {
           edges {
             node {
               name
